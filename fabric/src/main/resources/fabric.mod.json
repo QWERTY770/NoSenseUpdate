@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "nosense",
+  "version": "${version}",
+  "name": "No Sense Update",
+  "description": "No sense update mod",
+  "authors": [
+    "QWERTY770"
+  ],
+  "contact": {
+    "homepage": "https://github.com/QWERTY770/NoSenseUpdate",
+    "sources": "https://github.com/QWERTY770/NoSenseUpdate"
+  },
+  "license": "GNU General Public License v3.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.qwerty770.nosense.fabric.NoSenseModFabric"
+    ]
+  },
+  "mixins": [
+    "nosense.mixins.json",
+    "nosense-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "fabric-api": ">=0.83.0",
+    "minecraft": ">=1.20"
+  }
+}

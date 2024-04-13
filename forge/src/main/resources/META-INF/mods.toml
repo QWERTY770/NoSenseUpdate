@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[46,)"
+issueTrackerURL = "https://github.com/QWERTY770/NoSenseUpdate/issues"
+license = "GNU General Public License v3.0"
+
+[[mods]]
+modId = "nosense"
+version = "${version}"
+displayName = "No Sense Update"
+authors = "QWERTY770"
+description = '''
+No Sense Update!
+'''
+#logoFile = ""
+
+[[dependencies.nosense]]
+modId = "forge"
+mandatory = true
+versionRange = "[46,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.nosense]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20,)"
+ordering = "NONE"
+side = "BOTH"

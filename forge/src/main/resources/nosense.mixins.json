@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "io.github.qwerty770.nosense.forge.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
