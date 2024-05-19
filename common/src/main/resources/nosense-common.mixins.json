@@ -10,6 +10,7 @@
   "mixins": [
     "block.FallOnMixin",
     "block.NeighborChangedMixin",
+    "enchantment.EnchLevelMixin",
     "enchantment.ProtectionMixin",
     "enchantment.TridentMixin",
     "item.FlintMixin"
