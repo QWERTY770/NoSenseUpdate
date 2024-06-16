@@ -1,4 +1,4 @@
 # NoSenseUpdate
 Minecraft mod with no sense!
 
-See [the introduction page](https://zh.minecraft.wiki/w/User:QWERTY-5238/NoSenseUpdate) for more information.
+See [the introduction page](https://mcbbs.wiki/wiki/User:QWERTY770/NoSenseUpdate) for more information.
