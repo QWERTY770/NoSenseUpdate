@@ -9,6 +9,6 @@ import static io.github.qwerty770.nosense.NoSenseMod.ModLogger;
 public class NoSenseModForge {
     public NoSenseModForge() {
         NoSenseMod.init();
-        ModLogger.info("No Sense Mod loaded!");
+        ModLogger.info("No Sense Update loaded!");
     }
 }

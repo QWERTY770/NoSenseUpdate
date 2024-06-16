@@ -29,7 +29,7 @@ public class FlintMixin {
             }
             cir.cancel();
             cir.setReturnValue(InteractionResult.sidedSuccess(level.isClientSide()));
-            ModLogger.info("No Sense Update: Sometimes flint and steel does not work! Random number: " + d);
+            ModLogger.debug("No Sense Update: Sometimes flint and steel does not work! Random number: {}", d);
         }
     }
 }

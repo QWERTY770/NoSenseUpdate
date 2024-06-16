@@ -11,6 +11,6 @@ public class NoSenseModFabric implements ModInitializer {
     public void onInitialize() {
         NoSenseMod.init();
         LootTableModification.register();
-        ModLogger.info("No Sense Mod loaded!");
+        ModLogger.info("No Sense Update loaded!");
     }
 }

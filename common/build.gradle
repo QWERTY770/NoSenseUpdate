@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 architectury {
     common(rootProject.enabled_platforms.split(","))
 }
@@ -24,6 +25,6 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
+
     }
 }

@@ -1,1 +1,4 @@
 accessWidener   v2  named
+accessible field net/minecraft/world/level/storage/loot/entries/LootItem item Lnet/minecraft/world/item/Item;
+accessible field net/minecraft/world/level/storage/loot/LootPool entries [Lnet/minecraft/world/level/storage/loot/entries/LootPoolEntryContainer;
+accessible field net/minecraft/world/level/storage/loot/LootPool$Builder entries Ljava/util/List;

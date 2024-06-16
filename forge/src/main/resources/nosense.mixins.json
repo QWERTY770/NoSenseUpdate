@@ -6,6 +6,7 @@
   "client": [
   ],
   "mixins": [
+    "LootTableForgeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
