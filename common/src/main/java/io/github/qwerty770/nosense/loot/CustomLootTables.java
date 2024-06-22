@@ -20,13 +20,6 @@ import java.util.Optional;
 import static io.github.qwerty770.nosense.NoSenseMod.ModLogger;
 
 public abstract class CustomLootTables {
-    public static List<ResourceLocation> sheepLootTables = Lists.newArrayList(BuiltInLootTables.SHEEP_WHITE,
-            BuiltInLootTables.SHEEP_ORANGE, BuiltInLootTables.SHEEP_MAGENTA, BuiltInLootTables.SHEEP_LIGHT_BLUE,
-            BuiltInLootTables.SHEEP_YELLOW, BuiltInLootTables.SHEEP_LIME, BuiltInLootTables.SHEEP_PINK,
-            BuiltInLootTables.SHEEP_GRAY, BuiltInLootTables.SHEEP_LIGHT_GRAY, BuiltInLootTables.SHEEP_CYAN,
-            BuiltInLootTables.SHEEP_PURPLE, BuiltInLootTables.SHEEP_BLUE, BuiltInLootTables.SHEEP_BROWN,
-            BuiltInLootTables.SHEEP_GREEN, BuiltInLootTables.SHEEP_RED, BuiltInLootTables.SHEEP_BLACK);
-
     public static ResourceLocation getId(Item item){
         return BuiltInRegistries.ITEM.getKey(item);
     }
@@ -41,13 +34,14 @@ public abstract class CustomLootTables {
             return new ArrayList<>();
         }
         for (Holder<Item> itemHolder : itemHolders.get()){
-            ModLogger.info("Added item {}", itemHolder.value());
+            // ModLogger.info("Added item {}", itemHolder.value());
             items.add(itemHolder.value());
         }
         return items;
     }
 
     public static void removeItem(LootPool.Builder pool, Item item){
+        // Removes one item from a loot pool builder. For the Fabric platform.
         for (LootPoolEntryContainer entryContainer : pool.build().entries){
             if (entryContainer.getType().equals(LootPoolEntries.ITEM)){
                 LootItem lootItem = (LootItem) entryContainer;
@@ -56,6 +50,23 @@ public abstract class CustomLootTables {
                 }
             }
         }
+    }
+
+    public static LootPool.Builder removeItem(LootPool pool, Item item){
+        // Removes one item from a loot pool. For the Forge platform.
+        LootPool.Builder newPool = LootPool.lootPool();
+        for (LootPoolEntryContainer entryContainer : pool.entries){
+            if (entryContainer.getType().equals(LootPoolEntries.ITEM)){
+                LootItem lootItem = (LootItem) entryContainer;
+                if (getId(lootItem.item) != getId(item)){
+                    newPool.entries.add(entryContainer);
+                }
+            }
+            else {
+                newPool.entries.add(entryContainer);
+            }
+        }
+        return newPool;
     }
 
     public static void removeItems(LootPool.Builder pool, TagKey<Item> tagKey){
@@ -78,7 +89,6 @@ public abstract class CustomLootTables {
         for (LootPoolEntryContainer entryContainer : lootPool.entries){
             if (entryContainer.getType().equals(LootPoolEntries.ITEM)){
                 LootItem lootItem = (LootItem) entryContainer;
-                ModLogger.info("Read item {}", lootItem.item);
                 if (!items.contains(lootItem.item)){
                     newPool.entries.add(entryContainer);
                 }
@@ -89,4 +99,12 @@ public abstract class CustomLootTables {
         }
         return newPool;
     }
+
+    public static List<ResourceLocation> sheepLootTables = Lists.newArrayList(BuiltInLootTables.SHEEP_WHITE,
+            BuiltInLootTables.SHEEP_ORANGE, BuiltInLootTables.SHEEP_MAGENTA, BuiltInLootTables.SHEEP_LIGHT_BLUE,
+            BuiltInLootTables.SHEEP_YELLOW, BuiltInLootTables.SHEEP_LIME, BuiltInLootTables.SHEEP_PINK,
+            BuiltInLootTables.SHEEP_GRAY, BuiltInLootTables.SHEEP_LIGHT_GRAY, BuiltInLootTables.SHEEP_CYAN,
+            BuiltInLootTables.SHEEP_PURPLE, BuiltInLootTables.SHEEP_BLUE, BuiltInLootTables.SHEEP_BROWN,
+            BuiltInLootTables.SHEEP_GREEN, BuiltInLootTables.SHEEP_RED, BuiltInLootTables.SHEEP_BLACK);
+    public static ResourceLocation catLootTable = new ResourceLocation("entities/cat");
 }
